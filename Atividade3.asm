@@ -1,0 +1,17 @@
+org 0000h
+
+inicio:
+
+MOV A,#01010101b
+MOV B,#10010101b
+ANL A,B
+RR A
+RR A
+CPL A
+RL A
+RL A
+ORL A,B
+XRL A,B
+SWAP A
+JMP inicio
+end
