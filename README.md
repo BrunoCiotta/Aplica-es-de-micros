@@ -1,11 +1,12 @@
-##Questões
-###Questão 1
+# Aplicação de microprocessadores - Entregas 1 e 2
+## Questões
+### Questão 1
 Apresentar a definição formal de um sistema embarcado, indicando a referência primária do IEEE
 (Institute of Electrical and Electronics Engineers) que subsidie esta definição. Em seguida fazer uma
 explanação breve e objetiva sobre as principais características, funcionalidades e o que difere um
 sistema embarcado de um computador de propósito geral.
 
-###Questão 2
+### Questão 2
 De acordo com os Relatórios de Pesquisa sobre o Mercado de Sistemas Embarcados acima referidos
 (listar os itens abaixo com base nos 2 relatórios disponibilizados):
 I. Das ferramentas para sistemas embarcados – quais as principais áreas de aplicação dos projetos
@@ -18,7 +19,7 @@ sistema de controle de versão, e principal linguagem de programação?
 V. Dos microprocessadores/microcontroladores – quais os fabricantes/modelos mais citados na
 pesquisa?
 
-###Questão 3
+### Questão 3
 Recorra ao exemplo do microcontrolador aplicado ao controle de um elevador que foi
 apresentado em aula, disponível nas transparências do Cap. 2. Quais as vantagens de se utilizar
 um microcontrolador para aquele tipo de aplicação e qual deve ser o “perfil” de um
@@ -26,7 +27,7 @@ microcontrolador ideal para aquela aplicação do elevador em termos de capacida
 (baixa, média ou alta), quantidade de bits no barramento, e precisão no tratamento das
 informações (operação somente com inteiros ou ponto flutuante?)
 
-###Questão 4
+### Questão 4
 Quanto às portas paralelas de um microcontrolador:
 ( ) São somente de entrada
 ( ) São somente de saída.
@@ -36,7 +37,7 @@ Quanto às portas paralelas de um microcontrolador:
 bidirecional.
 ( ) Cada bit pode ser configurado como entrada, saída ou bidirecional.
 
-###Questão 5
+### Questão 5
 Assinale V para verdadeiro e F para falso nas afirmações abaixo:
 ( ) No modelo de Von Neumann, o microprocessador segue as instruções armazenadas na
 memória ROM (programas), lê as entradas e envia comandos sobre os canais de saída,
@@ -50,7 +51,7 @@ Harvard porque utiliza o mesmo barramento para o tráfego de dados e de instruç
 ( ) A técnica de pipeline é impossível de ser utilizada em computadores de arquitetura Von
 Neumann.
 
-###Questão 6
+### Questão 6
 Indique quais afirmativas se aplicam a uma instrução CISC e quais a uma instrução RISC:
 ➔ Os programas são mais complexos
 ➔ A maioria das instruções tem a mesma duração
@@ -61,12 +62,13 @@ Indique quais afirmativas se aplicam a uma instrução CISC e quais a uma instru
 ➔ Microcontroladores PIC, AVR, ARM
 ➔ Tempo de execução das instruções depende da frequência do clock.
 
-###Questão 7
+### Questão 7
 Abaixo é apresentado o diagrama de um microcontrolador. Qual a arquitetura utilizada e como
 chegamos a essa conclusão? Quantas portas I/O bidirecional e quantas linhas (bits/pinos) são
 endereçados de forma individual neste microcontrolador, com base no diagrama abaixo?
+![image](https://github.com/BrunoCiotta/Aplica-es-de-micros/assets/85022924/c01eebe2-8a9f-4dbf-b3f1-31c1f98941cd)
 
-###Questão 8
+### Questão 8
 No simulador EdSim51, digite e execute (clicando em “Assm”) as instruções abaixo:
 ```
 MOV R0, #22h
@@ -83,12 +85,12 @@ Qual a diferença entre as duas instruções acima? Tente refletir sobre a difer
 ACC e sobre porque possuem ciclos de máquina diferentes se a operação realizada é a
 mesma.
 
-###Questão 9
+### Questão 9
 A Figura abaixo mostra um microcontrolador genérico de 8 bits com 4 registradores internos à
 CPU, os quais são: Instruction Register (IR), Program Counter (PC), Accumulator (ACC) e
 Data Pointer (DPTR). Baseado na Figura abaixo, responda às questões com verdadeiro (V) ou
 Falso (F):
-
+![image](https://github.com/BrunoCiotta/Aplica-es-de-micros/assets/85022924/422fc18f-b906-4638-a52f-1f7e91619698)
 ( ) Trata-se de um microcontrolador de arquitetura Harvard.
 ( ) A memória EEPROM é de 4Kbytes e armazena as instruções que comandam o
 microcontrolador.
@@ -101,7 +103,7 @@ microcontrolador.
 ( ) O registrador DPTR é um ponteiro que aponta para a última instrução lida da memória.
 ( ) Para esse microcontrolador, o registrador DPTR deve ser de 10 bits.
 
-###Questão 10
+### Questão 10
 Responder com Verdadeiro (V) ou Falso (F) às seguintes afirmações.
 ( ) A pilha é uma memória RAM sequencial do tipo FIFO.
 ( ) A pilha geralmente é utilizada para armazenar endereço de retorno de subrotinas e também
@@ -118,16 +120,38 @@ armazenado na pilha seja carregado no registrador PC (program counter).
 possui tamanho 8 bits, mesmo tamanho do barramento de endereço da CPU.
 ( ) Geralmente são baseadas em flip-flops tipo D
 
-###Questão 11
+### Questão 11
 Refletir se existe diferença entre o endereço armazenado em um espaço de pilha e o endereço
 armazenado no Stack Pointer (SP)?
 
-###Questão 12
+### Questão 12
 Colocou-se 3 LEDs nos endereços P1.0, P1.1 e P1.2 no microcontrolador e 3 chaves nos
 endereços P2.0, P2.1 e P2.2. Considerando que os LEDs acendem quando é colocado nível
 baixo na saída e as chaves, quando pressionadas, colocam nível baixo na porta, explique o
 funcionamento do programa abaixo quando cada uma destas 3 chaves são pressionadas.
+```
+ORG 0000H
+Leitura:
+JNB P2.0, PX
+JNB P2.1, PY
+JNB P2.2, PZ
+LCALL Leitura
+PX:
+MOV P1, #0
+RET
+PY:
+MOV P1, #00000101b
+RET
+PZ:
+MOV A, P1
+CPL A
+MOV P1, A
+RET
+FIM:
+SJMP FIM
+```
 
+## Códigos
 ### Atividade 1
 ```
 	ORG		0000h		;definindo endereco de origem
