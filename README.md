@@ -1,23 +1,44 @@
 # Aplicação de microprocessadores - Entregas 1 e 2
 ## Questões
 ### Questão 1
-Apresentar a definição formal de um sistema embarcado, indicando a referência primária do IEEE
+**Apresentar a definição formal de um sistema embarcado, indicando a referência primária do IEEE
 (Institute of Electrical and Electronics Engineers) que subsidie esta definição. Em seguida fazer uma
 explanação breve e objetiva sobre as principais características, funcionalidades e o que difere um
-sistema embarcado de um computador de propósito geral.
+sistema embarcado de um computador de propósito geral.**
+
+
+Um sistema embarcado é definido formalmente pela IEEE 610.12-1990 (IEEE Standard Glossary of Software Engineering Terminology) como “um sistema computacional que faz parte de um sistema maior e implementa alguns dos requerimentos deste sistema”.
+
+Entre algumas características dos sistemas embarcados, pode-se destacar: diferem-se de computadores de propósito geral por realizarem tarefas específicas e predefinidas, tendo aplicações bem definidas; em geral, não podem ter sua funcionalidade alterada durante o uso; possuem recursos computacionais limitados, algumas restrições de hardware e software, além de capacidade limitada de memória.
 
 ### Questão 2
-De acordo com os Relatórios de Pesquisa sobre o Mercado de Sistemas Embarcados acima referidos
-(listar os itens abaixo com base nos 2 relatórios disponibilizados):
-I. Das ferramentas para sistemas embarcados – quais as principais áreas de aplicação dos projetos
-no mercado brasileiro e o cenário internacional?
-II. Quais as principais ferramentas de comunicação sem fio que estão sendo usadas no Brasil e no
-mundo?
-III. Quais os principais kits/plataformas de prototipagem usados?
-IV. Dos softwares para sistemas embarcados - qual a principal ferramenta de codificação, principal
-sistema de controle de versão, e principal linguagem de programação?
-V. Dos microprocessadores/microcontroladores – quais os fabricantes/modelos mais citados na
-pesquisa?
+**De acordo com os Relatórios de Pesquisa sobre o Mercado de Sistemas Embarcados acima referidos
+(listar os itens abaixo com base nos 2 relatórios disponibilizados):**
+
+**I. Das ferramentas para sistemas embarcados – quais as principais áreas de aplicação dos projetos
+no mercado brasileiro e o cenário internacional?**
+
+**II. Quais as principais ferramentas de comunicação sem fio que estão sendo usadas no Brasil e no
+mundo?**
+
+**III. Quais os principais kits/plataformas de prototipagem usados?**
+
+**IV. Dos softwares para sistemas embarcados - qual a principal ferramenta de codificação, principal
+sistema de controle de versão, e principal linguagem de programação?**
+
+**V. Dos microprocessadores/microcontroladores – quais os fabricantes/modelos mais citados na
+pesquisa?**
+
+
+I - No mercado brasileiro, as principais áreas de aplicação para sistemas embarcados são IoT e Sistemas industriais, incluindo automação e controle industrial, nessa ordem. No cenário internacional, as duas principais áreas são as mesmas, apenas com a inversão da ordem.
+
+II - As principais ferramentas de comunicação sem fio que estão sendo usadas no Brasil são, nessa ordem: Wi-Fi, celular 3G/4G, Bluetooth LE/Smart e Lora. No mundo, a principal ferramenta também é o Wi-Fi, seguido de Bluetooth LE, Bluetooth e celular 3G/4G/5G.
+
+III - No Brasil, os principais kits/plataformas de prototipagem usados são kits com ESP8266/ESP32, kits de desenvolvimento fornecidos pelos fabricantes do processador, Arduino e suas variações, Raspberry Pi. No mundo, as plataformas mais utilizadas são Raspberry Pi e Arduino.
+
+IV - No Brasil, o Visual Studio Code é a principal ferramenta de codificação, o Git é o sistema de controle de versão preferido e a linguagem C é a mais utilizada, seguida de C++ e Python. No mundo, o mesmo ocorre para o sistema de controle de versão e para as linguagens.
+
+V - No Brasil, os três fabricantes de microprocessadores/microcontroladores mais citados foram: Espressif, STMicroeletronics e Microship/Atmel. Já no cenário global, os três mais citados foram: STMicroeletronics, Microship e Texas Instruments.
 
 ### Questão 3
 Recorra ao exemplo do microcontrolador aplicado ao controle de um elevador que foi
@@ -27,14 +48,24 @@ microcontrolador ideal para aquela aplicação do elevador em termos de capacida
 (baixa, média ou alta), quantidade de bits no barramento, e precisão no tratamento das
 informações (operação somente com inteiros ou ponto flutuante?)
 
+As principais vantagens de se utilizar um microcontrolador para realizar o controle do elevador podem ser citadas como segue: redução do tamanho do controlador (que contaria com vários circuitos integrados), menor consumo de energia, redução do tempo e custo de projeto, maior confiabilidade (já que a probabilidade de falhas é proporcional ao número de componentes) e facilidade de manutenção.
+
+Já o perfil ideal desse microcontrolador envolveria: baixa capacidade de processamento da CPU, 8 bits no barramento já seriam suficientes, operação somente com inteiros.
+
 ### Questão 4
-Quanto às portas paralelas de um microcontrolador:
-( ) São somente de entrada
-( ) São somente de saída.
-( ) Cada palavra (A, B, C, P1, P2, P3…) pode ser configurada como entrada ou saída.
-( ) Cada bit pode ser configurado como entrada ou saída.
-( ) Cada palavra (A, B, C... P1, P2, P3…) pode ser configurada como entrada, saída ou
-bidirecional.
+**Quanto às portas paralelas de um microcontrolador:**
+
+**( ) São somente de entrada**
+
+**( ) São somente de saída.**
+
+**( ) Cada palavra (A, B, C, P1, P2, P3…) pode ser configurada como entrada ou saída.**
+
+**( ) Cada bit pode ser configurado como entrada ou saída.**
+
+**( ) Cada palavra (A, B, C... P1, P2, P3…) pode ser configurada como entrada, saída ou
+bidirecional.**
+
 ( ) Cada bit pode ser configurado como entrada, saída ou bidirecional.
 
 ### Questão 5
