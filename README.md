@@ -69,35 +69,50 @@ bidirecional.**
 (V) Cada bit pode ser configurado como entrada, saída ou bidirecional.
 
 ### Questão 5
-Assinale V para verdadeiro e F para falso nas afirmações abaixo:
-( ) No modelo de Von Neumann, o microprocessador segue as instruções armazenadas na
+**Assinale V para verdadeiro e F para falso nas afirmações abaixo:**
+
+**( ) No modelo de Von Neumann, o microprocessador segue as instruções armazenadas na
 memória ROM (programas), lê as entradas e envia comandos sobre os canais de saída,
-alterando as informações contidas na memória RAM.
-( ) Os registradores Special Function Registers localizam-se sempre internos à CPU.
-( ) O ciclo de máquina é composto pelo ciclo de busca mais o ciclo de execução, cada qual
-demorando um pulso de clock.
-( ) A instrução “CLR A” não possui operando e gasta apenas 1 ciclo de máquina
-( ) A arquitetura Von Neumann é considerada uma arquitetura mais simples do que a arquitetura
-Harvard porque utiliza o mesmo barramento para o tráfego de dados e de instruções.
-( ) A técnica de pipeline é impossível de ser utilizada em computadores de arquitetura Von
-Neumann.
+alterando as informações contidas na memória RAM.**
+
+**( ) Os registradores Special Function Registers localizam-se sempre internos à CPU.**
+
+**( ) O ciclo de máquina é composto pelo ciclo de busca mais o ciclo de execução, cada qual
+demorando um pulso de clock.**
+
+**( ) A instrução “CLR A” não possui operando e gasta apenas 1 ciclo de máquina**
+
+**( ) A arquitetura Von Neumann é considerada uma arquitetura mais simples do que a arquitetura
+Harvard porque utiliza o mesmo barramento para o tráfego de dados e de instruções.**
+
+**( ) A técnica de pipeline é impossível de ser utilizada em computadores de arquitetura Von
+Neumann.**
+
+F - F - V - V - V - V
 
 ### Questão 6
-Indique quais afirmativas se aplicam a uma instrução CISC e quais a uma instrução RISC:
-➔ Os programas são mais complexos
-➔ A maioria das instruções tem a mesma duração
-➔ Mais instruções disponíveis
-➔ Programas menores
-➔ Utiliza menos espaço na memória de programa
-➔ Processamento de cada instrução é mais lento
-➔ Microcontroladores PIC, AVR, ARM
-➔ Tempo de execução das instruções depende da frequência do clock.
+**Indique quais afirmativas se aplicam a uma instrução CISC e quais a uma instrução RISC:**
+➔ **Os programas são mais complexos**
+➔ **A maioria das instruções tem a mesma duração**
+➔ **Mais instruções disponíveis**
+➔ **Programas menores**
+➔ **Utiliza menos espaço na memória de programa**
+➔ **Processamento de cada instrução é mais lento**
+➔ **Microcontroladores PIC, AVR, ARM**
+➔ **Tempo de execução das instruções depende da frequência do clock.**
+
+RISC - RISC - CISC - CISC - RISC - CISC - RISC - CISC
 
 ### Questão 7
-Abaixo é apresentado o diagrama de um microcontrolador. Qual a arquitetura utilizada e como
+**Abaixo é apresentado o diagrama de um microcontrolador. Qual a arquitetura utilizada e como
 chegamos a essa conclusão? Quantas portas I/O bidirecional e quantas linhas (bits/pinos) são
-endereçados de forma individual neste microcontrolador, com base no diagrama abaixo?
+endereçados de forma individual neste microcontrolador, com base no diagrama abaixo?**
+
 ![image](https://github.com/BrunoCiotta/Aplica-es-de-micros/assets/85022924/c01eebe2-8a9f-4dbf-b3f1-31c1f98941cd)
+
+Pela imagem, percebe-se que se trata de uma arquitetura von Neumann, tendo em vista que dados e instruções compartilham o mesmo barramento.
+
+Existem quatro portas I/O bidirecionais e duas linhas (pinos P0 e P2) são endereçados de forma individual.
 
 ### Questão 8
 No simulador EdSim51, digite e execute (clicando em “Assm”) as instruções abaixo:
