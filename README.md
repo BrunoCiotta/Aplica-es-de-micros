@@ -41,12 +41,12 @@ IV - No Brasil, o Visual Studio Code é a principal ferramenta de codificação,
 V - No Brasil, os três fabricantes de microprocessadores/microcontroladores mais citados foram: Espressif, STMicroeletronics e Microship/Atmel. Já no cenário global, os três mais citados foram: STMicroeletronics, Microship e Texas Instruments.
 
 ### Questão 3
-Recorra ao exemplo do microcontrolador aplicado ao controle de um elevador que foi
+**Recorra ao exemplo do microcontrolador aplicado ao controle de um elevador que foi
 apresentado em aula, disponível nas transparências do Cap. 2. Quais as vantagens de se utilizar
 um microcontrolador para aquele tipo de aplicação e qual deve ser o “perfil” de um
 microcontrolador ideal para aquela aplicação do elevador em termos de capacidade da CPU
 (baixa, média ou alta), quantidade de bits no barramento, e precisão no tratamento das
-informações (operação somente com inteiros ou ponto flutuante?)
+informações (operação somente com inteiros ou ponto flutuante?)**
 
 As principais vantagens de se utilizar um microcontrolador para realizar o controle do elevador podem ser citadas como segue: redução do tamanho do controlador (que contaria com vários circuitos integrados), menor consumo de energia, redução do tempo e custo de projeto, maior confiabilidade (já que a probabilidade de falhas é proporcional ao número de componentes) e facilidade de manutenção.
 
@@ -66,7 +66,7 @@ Já o perfil ideal desse microcontrolador envolveria: baixa capacidade de proces
 **( ) Cada palavra (A, B, C... P1, P2, P3…) pode ser configurada como entrada, saída ou
 bidirecional.**
 
-( ) Cada bit pode ser configurado como entrada, saída ou bidirecional.
+(V) Cada bit pode ser configurado como entrada, saída ou bidirecional.
 
 ### Questão 5
 Assinale V para verdadeiro e F para falso nas afirmações abaixo:
