@@ -1,22 +1,22 @@
 org 00h
 
-	JMP		main
+	JMP		main ; duração - 2us
 	org 33h
 
 main:
-	MOV		R0,#20h
-	MOV		R1,#00h
+	MOV		R0,#20h ; duração - 1us
+	MOV		R1,#00h ; duração - 1us
 
 LOOP:
-	MOV		A,@R0
-	SUBB	A,#45h
-	JNC		bloco
-	INC		R1
+	MOV		A,@R0 ; duração - 1us
+	SUBB	A,#45h ; duração - 1us
+	JNC		bloco ; duração - 2us
+	INC		R1 ; duração - 2us
 
 bloco:
-	INC		R0
-	CJNE	R0,#24h,LOOP
-	NOP
-	JMP		$
+	INC		R0 ; duração - 1us
+	CJNE	R0,#24h,LOOP ; duração - 3us
+	NOP ; duração - 1us
+	JMP		$ ; duração - 2us
 
 end
