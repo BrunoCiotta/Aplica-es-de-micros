@@ -20,5 +20,5 @@ bloco3:             ;Label bloco3
 DJNZ R0, bloco3     ;Decrementa R0 e salta para bloco3 se R0 != 0 - duração: 2us (2 ciclos)
 JMP	main            ;Salta incodicionalmente para main - duração: 2us (2 ciclos)
 
-end                 ;Fim do programa - duração total: 16us
+end                 ;Fim do programa - duração total: 16us (255us)
 
