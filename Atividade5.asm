@@ -11,12 +11,12 @@ LOOP:		      ;Label LOOP
 MOV A,@R0 	      ;Move R0 de forma indireta para A - duração: 1us
 SUBB A,#45h 	      ;Subtrai 45h de A - duração: 1us
 JNC bloco 	      ;Salta para bloco se carry do PSW = 0 duração: 2us
-INC R1 		      ;Incrementa R1 de uma unidade - duração: 2us
+INC R1 		      ;Incrementa R1 de uma unidade - duração: 1us
 
 bloco:		      ;Label bloco
 INC R0 		      ;Incrementa R0 de 1 unidade - duração: 1us
-CJNE R0,#24h,LOOP     ;Compara R0 com 24h e salta para LOOP caso R0 != 24h duração: 3us
+CJNE R0,#24h,LOOP     ;Compara R0 com 24h e salta para LOOP caso R0 != 24h duração: 2us
 NOP 	              ;Nao realiza operacao - duração: 1us
 JMP $ 		      ;Segura o programa nessa linha - duração: 2us
 
-end		      ;Fim do programa - duração total: 
+end		      ;Fim do programa - duração total: 15us (39us)
