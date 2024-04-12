@@ -115,66 +115,83 @@ Pela imagem, percebe-se que se trata de uma arquitetura von Neumann, tendo em vi
 Existem quatro portas I/O bidirecionais e duas linhas (pinos P0 e P2) são endereçados de forma individual.
 
 ### Questão 8
-No simulador EdSim51, digite e execute (clicando em “Assm”) as instruções abaixo:
+**No simulador EdSim51, digite e execute (clicando em “Assm”) as instruções abaixo:**
 ```
 MOV R0, #22h
 MOV 00h, #22h
 ```
-Qual a diferença entre as duas instruções acima? Tente refletir porque possuem ciclos de
+**Qual a diferença entre as duas instruções acima? Tente refletir porque possuem ciclos de
 máquina diferentes se a operação é realizada na mesma posição de memória RAM (00h ou
-R0 usa o mesmo espaço).
+R0 usa o mesmo espaço).**
 ```
 MOV A, #22h
 MOV ACC, #22h
 ```
-Qual a diferença entre as duas instruções acima? Tente refletir sobre a diferença de usar A ou
+**Qual a diferença entre as duas instruções acima? Tente refletir sobre a diferença de usar A ou
 ACC e sobre porque possuem ciclos de máquina diferentes se a operação realizada é a
-mesma.
+mesma.**
 
 ### Questão 9
-A Figura abaixo mostra um microcontrolador genérico de 8 bits com 4 registradores internos à
+**A Figura abaixo mostra um microcontrolador genérico de 8 bits com 4 registradores internos à
 CPU, os quais são: Instruction Register (IR), Program Counter (PC), Accumulator (ACC) e
 Data Pointer (DPTR). Baseado na Figura abaixo, responda às questões com verdadeiro (V) ou
-Falso (F):
+Falso (F):**
 ![image](https://github.com/BrunoCiotta/Aplica-es-de-micros/assets/85022924/422fc18f-b906-4638-a52f-1f7e91619698)
-( ) Trata-se de um microcontrolador de arquitetura Harvard.
-( ) A memória EEPROM é de 4Kbytes e armazena as instruções que comandam o
-microcontrolador.
-( ) A memória SRAM é de 512 bytes e armazena dados voláteis
-( ) O registrador IR tem a função de armazenar a instrução lida da memória SRAM.
-( ) Para esse microcontrolador, o registrador IR deve ser de 8 bits
-( ) O registrador PC armazena o endereço da instrução lida da memória EEPROM.
-( ) Para esse microcontrolador, o registrador PC deve ser de 10 bits.
-( ) Para esse microcontrolador, o registrador ACC deve ser de 8 bits.
-( ) O registrador DPTR é um ponteiro que aponta para a última instrução lida da memória.
-( ) Para esse microcontrolador, o registrador DPTR deve ser de 10 bits.
+**( ) Trata-se de um microcontrolador de arquitetura Harvard.**
+
+**( ) A memória EEPROM é de 4Kbytes e armazena as instruções que comandam o
+microcontrolador.**
+
+**( ) A memória SRAM é de 512 bytes e armazena dados voláteis**
+
+**( ) O registrador IR tem a função de armazenar a instrução lida da memória SRAM.**
+
+**( ) Para esse microcontrolador, o registrador IR deve ser de 8 bits.**
+
+**( ) O registrador PC armazena o endereço da instrução lida da memória EEPROM.**
+
+**( ) Para esse microcontrolador, o registrador PC deve ser de 10 bits.**
+
+**( ) Para esse microcontrolador, o registrador ACC deve ser de 8 bits.**
+
+**( ) O registrador DPTR é um ponteiro que aponta para a última instrução lida da memória.**
+
+**( ) Para esse microcontrolador, o registrador DPTR deve ser de 10 bits.**
 
 ### Questão 10
-Responder com Verdadeiro (V) ou Falso (F) às seguintes afirmações.
-( ) A pilha é uma memória RAM sequencial do tipo FIFO.
-( ) A pilha geralmente é utilizada para armazenar endereço de retorno de subrotinas e também
-de interrupções.
-( ) O ponteiro de pilha (Stack Pointer) é um registrador que aponta para um endereço da
+**Responder com Verdadeiro (V) ou Falso (F) às seguintes afirmações.**
+
+**( ) A pilha é uma memória RAM sequencial do tipo FIFO.**
+
+**( ) A pilha geralmente é utilizada para armazenar endereço de retorno de subrotinas e também
+de interrupções.**
+
+**( ) O ponteiro de pilha (Stack Pointer) é um registrador que aponta para um endereço da
 memória ROM, que é o endereço de retorno do programa após o atendimento a uma interrupção
-ou sub-rotina.
-( ) As instruções PUSH e POP são exclusivas para operações com pilha.
-( ) A instrução CALL <endereço> deve ser usada para indicar qual endereço o programa deve
-desviar no caso de um atendimento à interrupção ou chamada de sub-rotina.
-( ) A instrução RET, colocada no final de uma sub-rotina, faz com que o último endereço
-armazenado na pilha seja carregado no registrador PC (program counter).
-( ) A área da RAM interna dedicada à pilha é determinada pelo ponteiro SP, um dos SFRs, que
-possui tamanho 8 bits, mesmo tamanho do barramento de endereço da CPU.
-( ) Geralmente são baseadas em flip-flops tipo D
+ou sub-rotina.**
+
+**( ) As instruções PUSH e POP são exclusivas para operações com pilha.**
+
+**( ) A instrução CALL <endereço> deve ser usada para indicar qual endereço o programa deve
+desviar no caso de um atendimento à interrupção ou chamada de sub-rotina.**
+
+**( ) A instrução RET, colocada no final de uma sub-rotina, faz com que o último endereço
+armazenado na pilha seja carregado no registrador PC (program counter).**
+
+**( ) A área da RAM interna dedicada à pilha é determinada pelo ponteiro SP, um dos SFRs, que
+possui tamanho 8 bits, mesmo tamanho do barramento de endereço da CPU.**
+
+**( ) Geralmente são baseadas em flip-flops tipo D.**
 
 ### Questão 11
-Refletir se existe diferença entre o endereço armazenado em um espaço de pilha e o endereço
-armazenado no Stack Pointer (SP)?
+**Refletir se existe diferença entre o endereço armazenado em um espaço de pilha e o endereço
+armazenado no Stack Pointer (SP)?**
 
 ### Questão 12
-Colocou-se 3 LEDs nos endereços P1.0, P1.1 e P1.2 no microcontrolador e 3 chaves nos
+**Colocou-se 3 LEDs nos endereços P1.0, P1.1 e P1.2 no microcontrolador e 3 chaves nos
 endereços P2.0, P2.1 e P2.2. Considerando que os LEDs acendem quando é colocado nível
 baixo na saída e as chaves, quando pressionadas, colocam nível baixo na porta, explique o
-funcionamento do programa abaixo quando cada uma destas 3 chaves são pressionadas.
+funcionamento do programa abaixo quando cada uma destas 3 chaves são pressionadas.**
 ```
 ORG 0000H
 Leitura:
