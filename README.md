@@ -178,23 +178,23 @@ funcionamento do programa abaixo quando cada uma destas 3 chaves são pressionad
 ```
 ORG 0000H
 Leitura:
-JNB P2.0, PX
-JNB P2.1, PY
-JNB P2.2, PZ
-LCALL Leitura
+	JNB P2.0, PX
+	JNB P2.1, PY
+	JNB P2.2, PZ
+	LCALL Leitura
 PX:
-MOV P1, #0
+	MOV P1, #0
 RET
 PY:
-MOV P1, #00000101b
-RET
-PZ:
-MOV A, P1
-CPL A
-MOV P1, A
-RET
+	MOV P1, #00000101b
+	RET
+	PZ:
+	MOV A, P1
+	CPL A
+	MOV P1, A
+	RET
 FIM:
-SJMP FIM
+	SJMP FIM
 ```
 
 ## Códigos
@@ -215,11 +215,11 @@ main:
 	MOV		21h,R1		;move o conteudo de R1 para 22h - 2us (2 ciclos)
 	MOV		R1,#21h		;move o valor do endereco 21h para R1 - 1us (1 ciclo)
 	MOV		A,@R1		;move de forma indireta R1 para o ACC - 1us (1 ciclo)
-	MOV		DPTR,#9A5Bh;move o valor 9A5Bh para o DPTR - 2us (2 ciclos)
-	NOP						;consome 1us sem nenhuma operacao - 1us (1 ciclo)
-	JMP		$				;segura o programa nessa linha - 2us (2 ciclos)
+	MOV		DPTR,#9A5Bh	;move o valor 9A5Bh para o DPTR - 2us (2 ciclos)
+	NOP				;consome 1us sem nenhuma operacao - 1us (1 ciclo)
+	JMP		$		;segura o programa nessa linha - 2us (2 ciclos)
 
-	end						;encerra o programa
+end				;encerra o programa
  ```
 
 ### Atividade 2
@@ -227,22 +227,22 @@ main:
 org 00h
 
 inicio:
-MOV A, #2     ;Move de forma imediata o valor 2 em decimal para o ACC - duração: 1us (1 ciclo)
-MOV B, #3     ;Move de forma imediata o valor 3 em decimal para B - duração: 2us (2 ciclos)
-MOV 20h, #7   ;Move para o endereço 20h o valor 7 em decimal - duração: 2us (2 ciclos)
-ADD A, 20h    ;Soma o conteudo do endereco 20h ao ACC - duração: 1us (1 ciclo)
-DEC A         ;Decrementa o ACC de uma unidade - duração: 1us (1 ciclo)
-DEC A         ;Decrementa o ACC de uma unidade - duração: 1us (1 ciclo)
-DEC A         ;Decrementa o ACC de uma unidade - duração: 1us (1 ciclo)
-INC B         ;Incrementa B em uma unidade - duração: 1us (1 ciclo)
-SUBB A, B     ;Subtrai A por B - duração: 1us (1 ciclo)
-MUL AB        ;Multiplica A por B - duração: 4us (4 ciclos)
-INC B         ;Incrementa B de uma unidade - duração: 1us (1 ciclo)
-INC B         ;Incrementa B de uma unidade - duração: 1us (1 ciclo)
-DIV AB        ;Divide A por B duração: 4us (4 ciclos)
-MOV 21h, A    ;Move o conteudo do ACC para o endereco 21h - duração: 1us (1 ciclo)
-MOV 22h, B    ;Move o conteudo de B para o endereco 22h - duração: 2us (2 ciclos)
-JMP inicio    ;Salta para a label inicio - duração: 2us (2 ciclos)
+	MOV A, #2     ;Move de forma imediata o valor 2 em decimal para o ACC - duração: 1us (1 ciclo)
+	MOV B, #3     ;Move de forma imediata o valor 3 em decimal para B - duração: 2us (2 ciclos)
+	MOV 20h, #7   ;Move para o endereço 20h o valor 7 em decimal - duração: 2us (2 ciclos)
+	ADD A, 20h    ;Soma o conteudo do endereco 20h ao ACC - duração: 1us (1 ciclo)
+	DEC A         ;Decrementa o ACC de uma unidade - duração: 1us (1 ciclo)
+	DEC A         ;Decrementa o ACC de uma unidade - duração: 1us (1 ciclo)
+	DEC A         ;Decrementa o ACC de uma unidade - duração: 1us (1 ciclo)
+	INC B         ;Incrementa B em uma unidade - duração: 1us (1 ciclo)
+	SUBB A, B     ;Subtrai A por B - duração: 1us (1 ciclo)
+	MUL AB        ;Multiplica A por B - duração: 4us (4 ciclos)
+	INC B         ;Incrementa B de uma unidade - duração: 1us (1 ciclo)
+	INC B         ;Incrementa B de uma unidade - duração: 1us (1 ciclo)
+	DIV AB        ;Divide A por B duração: 4us (4 ciclos)
+	MOV 21h, A    ;Move o conteudo do ACC para o endereco 21h - duração: 1us (1 ciclo)
+	MOV 22h, B    ;Move o conteudo de B para o endereco 22h - duração: 2us (2 ciclos)
+	JMP inicio    ;Salta para a label inicio - duração: 2us (2 ciclos)
 
 end           ;Fim do programa - duracao total: 26us
 ```
@@ -253,18 +253,18 @@ org 0000h
 
 inicio:
 
-MOV A,#01010101b    ;Move de forma imediata para o ACC o valor binario indicado - duração: 1us (1 ciclo)
-MOV B,#10010101b    ;Move de forma imediata para B o valor binario indicado - duração: 1us (1 ciclo)
-ANL A,B             ;Realiza o AND logico entre A e B - duração: 1us (1 ciclo)
-RR A                ;Rotaciona A a direita em 1 bit - duração: 1us (1 ciclo)
-RR A                ;Rotaciona A a direita em 1 bit - duração: 1us (1 ciclo)
-CPL A               ;Realiza o complemento de A - duração: 1us (1 ciclo)
-RL A                ;Rotaciona A a esquerda em 1 bit - duração: 1us (1 ciclo)
-RL A                ;Rotaciona A a esquerda em 1 bit - duração: 1us (1 ciclo)
-ORL A,B             ;Realiza o OR logico entre A e B - duração: 1us (1 ciclo)
-XRL A,B             ;Realiza o XOR logico entre A e B - duração: 1us (1 ciclo)
-SWAP A              ;Realiza o SWAP de A - duração: 1us (1 ciclo)
-JMP inicio          ;Salta para a label inicio - duração: 1us (1 ciclo)
+	MOV A,#01010101b    ;Move de forma imediata para o ACC o valor binario indicado - duração: 1us (1 ciclo)
+	MOV B,#10010101b    ;Move de forma imediata para B o valor binario indicado - duração: 1us (1 ciclo)
+	ANL A,B             ;Realiza o AND logico entre A e B - duração: 1us (1 ciclo)
+	RR A                ;Rotaciona A a direita em 1 bit - duração: 1us (1 ciclo)
+	RR A                ;Rotaciona A a direita em 1 bit - duração: 1us (1 ciclo)
+	CPL A               ;Realiza o complemento de A - duração: 1us (1 ciclo)
+	RL A                ;Rotaciona A a esquerda em 1 bit - duração: 1us (1 ciclo)
+	RL A                ;Rotaciona A a esquerda em 1 bit - duração: 1us (1 ciclo)
+	ORL A,B             ;Realiza o OR logico entre A e B - duração: 1us (1 ciclo)
+	XRL A,B             ;Realiza o XOR logico entre A e B - duração: 1us (1 ciclo)
+	SWAP A              ;Realiza o SWAP de A - duração: 1us (1 ciclo)
+	JMP inicio          ;Salta para a label inicio - duração: 1us (1 ciclo)
 
 end                 ;Fim do programa - duracao total: 12us
 ```
@@ -277,21 +277,21 @@ JMP main            ;Salta para a label main - duração: 2us (2 ciclos)
 org 33h      
 
 main:               ;Label main
-CLR	A               ;Limpa o ACC - duração: 1us (1 ciclo)
-MOV	R0,#78h         ;Move o valor 78h para R0 - duração: 1us (1 ciclo)
+	CLR	A               ;Limpa o ACC - duração: 1us (1 ciclo)
+	MOV	R0,#78h         ;Move o valor 78h para R0 - duração: 1us (1 ciclo)
 
 bloco1:             ;Label bloco1
-JZ	bloco2          ;Salta para bloco2 se A = 0 - duração: 2us (2 ciclos)
-JNZ	bloco3          ;Salta para bloco3 se A != 0 - duração: 2us (2 ciclos)
-NOP                 ;Nao realiza operacao - duração: 1us (1 ciclo)
+	JZ	bloco2      ;Salta para bloco2 se A = 0 - duração: 2us (2 ciclos)
+	JNZ	bloco3      ;Salta para bloco3 se A != 0 - duração: 2us (2 ciclos)
+	NOP                 ;Nao realiza operacao - duração: 1us (1 ciclo)
 
 bloco2:             ;Label bloco2
-MOV A,R0            ;Move o conteudo de R0 para o ACC - duração: 1us (1 ciclo)
-JMP bloco1          ;Salta incodicionalmente para bloco1 - duração: 2us (2 ciclos)
+	MOV A,R0            ;Move o conteudo de R0 para o ACC - duração: 1us (1 ciclo)
+	JMP bloco1          ;Salta incodicionalmente para bloco1 - duração: 2us (2 ciclos)
 
 bloco3:             ;Label bloco3
-DJNZ R0, bloco3     ;Decrementa R0 e salta para bloco3 se R0 != 0 - duração: 2us (2 ciclos)
-JMP	main            ;Salta incodicionalmente para main - duração: 2us (2 ciclos)
+	DJNZ R0, bloco3     ;Decrementa R0 e salta para bloco3 se R0 != 0 - duração: 2us (2 ciclos)
+	JMP	main        ;Salta incodicionalmente para main - duração: 2us (2 ciclos)
 
 end                 ;Fim do programa - duração total: 16us
 ```
@@ -304,20 +304,20 @@ JMP main 	      ;Salta para a label do programa principal - duração: 2us
 org 33h
 
 main:		      ;Label main
-MOV R0,#20h 	      ;Move o valor 20h para R0 - duração: 1us
-MOV R1,#00h 	      ;Move o valor 00h para R1 - duração: 1us
+	MOV R0,#20h 	      ;Move o valor 20h para R0 - duração: 1us
+	MOV R1,#00h 	      ;Move o valor 00h para R1 - duração: 1us
 
 LOOP:		      ;Label LOOP
-MOV A,@R0 	      ;Move R0 de forma indireta para A - duração: 1us
-SUBB A,#45h 	      ;Subtrai 45h de A - duração: 1us
-JNC bloco 	      ;Salta para bloco se carry do PSW = 0 duração: 2us
+	MOV A,@R0 	      ;Move R0 de forma indireta para A - duração: 1us
+	SUBB A,#45h 	      ;Subtrai 45h de A - duração: 1us
+	JNC bloco 	      ;Salta para bloco se carry do PSW = 0 duração: 2us
 INC R1 		      ;Incrementa R1 de uma unidade - duração: 2us
 
 bloco:		      ;Label bloco
-INC R0 		      ;Incrementa R0 de 1 unidade - duração: 1us
-CJNE R0,#24h,LOOP     ;Compara R0 com 24h e salta para LOOP caso R0 != 24h duração: 3us
-NOP 	              ;Nao realiza operacao - duração: 1us
-JMP $ 		      ;Segura o programa nessa linha - duração: 2us
+	INC R0 		      ;Incrementa R0 de 1 unidade - duração: 1us
+	CJNE R0,#24h,LOOP     ;Compara R0 com 24h e salta para LOOP caso R0 != 24h duração: 3us
+	NOP 	              ;Nao realiza operacao - duração: 1us
+	JMP $ 		      ;Segura o programa nessa linha - duração: 2us
 
 end		      ;Fim do programa - duração total: 
 ```
