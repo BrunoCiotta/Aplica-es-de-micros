@@ -263,10 +263,12 @@ end				;encerra o programa
 
 **(a) - Qual foi o tempo gasto em cada linha de instrução e o tempo total
 em μs?**
+
 Respondido nos comentários do programa.
 
 **(b) - Quantos ciclos de máquina esse programa contém ? (Justifique sua
 resposta);**
+
 O programa contém 22 ciclos de máquina.
 
 **(c) - O que aconteceu ao mover uma porta inteira de 8 registradores
@@ -274,16 +276,19 @@ O programa contém 22 ciclos de máquina.
 é FF ? (consulte a página 7 do datasheet AT89S51 Atmel que versa sobre
 a inicialização de registradores - lembrando que o MCS-51 possui 4
 portas: P0, P1, P2, P3).**
+
 Ao fazer isso, o valor FFh foi obtido no endereço. Isso se dá porque, de acordo com o datasheet, quando é feito o reset, os 8 bits da porta são inicalizados em 1, formando o valor FFh.
 
 **(d) - Qual valor apareceu no acumulador após ter movido R1 de forma
 indireta para ele?**
+
 O valor FFh apareceu no acumulador.
 
 **(e) - Por que foi possível mover um valor de 4 dígitos para DPTR? Em
 quais registradores especiais do simulador foi possível verificar
 mudanças quando essa operação foi realizada? Qual o maior valor que
 pode ser movido para DPTR em hexadecimal?**
+
 Isso foi possível porque o DPTR é um registrador de 16 bits, sendo que os 8 bits mais significativos estão no registrados DPH e os 8 bits menos significativos estão em DPL. Foi possível verificar mudanças nos registradores DPH e DPL com essa operação. O valor máximo que pode ser movido é 0FFFFh.
 
 ### Atividade 2
