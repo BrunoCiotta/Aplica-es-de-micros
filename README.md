@@ -203,6 +203,7 @@ Existe diferença, pois o endereço armazenado em um espaço de pilha é o ender
 endereços P2.0, P2.1 e P2.2. Considerando que os LEDs acendem quando é colocado nível
 baixo na saída e as chaves, quando pressionadas, colocam nível baixo na porta, explique o
 funcionamento do programa abaixo quando cada uma destas 3 chaves são pressionadas.**
+
 ```
 ORG 0000H
 Leitura:
@@ -216,7 +217,7 @@ PX:
 PY:
 	MOV P1, #00000101b
 	RET
-	PZ:
+PZ:
 	MOV A, P1
 	CPL A
 	MOV P1, A
@@ -224,6 +225,16 @@ PY:
 FIM:
 	SJMP FIM
 ```
+O bloco "Leitura" irá realizar a leitura das portas onde estão conectadas as chaves, realizando subrotinas diferentes a depender da chave pressionada.
+
+Quando a chave conectada à porta P2.0 é pressionada, todos os LEDs estarão em estado baixo (apagados). Isso porque a condição JNB P2.0, PX falhará, pois a chave pressionada irá colocar o nível da porta P2.0 em baixo. O programa colocará todos os LEDs no estado baixo.
+
+Quando a chave conectada à porta P2.1 é pressionada, apenas o LED conectado à porta P1.1 acenderá. Isso acontece porque a condição JNB P2.0, PX será verdadeira, pois a chave não pressionada manterá o nível da porta P2.0 em alto. A condição JNB P2.1, PY falhará, pois a chave pressionada colocará o nível da porta P2.1 em baixo. O programa executará a sub-rotina que acenderá apenas o LED conectado à porta P1.1.
+
+Quando a chave conectada à porta P2.2 é pressionada, o estado de todos os LEDs será invertido. As condições JNB P2.0, PX e JNB P2.1, PY serão verdadeiras, pois as chaves correspondentes não estão pressionadas. A condição JNB P2.2, PZ falhará, pois a chave pressionada colocará o nível da porta P2.2 em baixo. O programa executará a sub-rotina que inverterá o estado de todos os LEDs.
+
+Após a execução das sub-rotinas, o programa retorna para a rotina principal de leitura, onde ele continuará a monitorar as portas P2.0, P2.1 e P2.2 para detectar novas pressões de teclas. Essa lógica é mantida até que o programa seja interrompido.
+
 
 ## Códigos
 ### Atividade 1
@@ -250,6 +261,31 @@ main:
 end				;encerra o programa
  ```
 
+**(a) - Qual foi o tempo gasto em cada linha de instrução e o tempo total
+em μs?**
+Respondido nos comentários do programa.
+
+**(b) - Quantos ciclos de máquina esse programa contém ? (Justifique sua
+resposta);**
+O programa contém 22 ciclos de máquina.
+
+**(c) - O que aconteceu ao mover uma porta inteira de 8 registradores
+(como: “MOV A, P1”, no exemplo) para um destino e porque seu valor
+é FF ? (consulte a página 7 do datasheet AT89S51 Atmel que versa sobre
+a inicialização de registradores - lembrando que o MCS-51 possui 4
+portas: P0, P1, P2, P3).**
+Ao fazer isso, o valor FFh foi obtido no endereço. Isso se dá porque, de acordo com o datasheet, quando é feito o reset, os 8 bits da porta são inicalizados em 1, formando o valor FFh.
+
+**(d) - Qual valor apareceu no acumulador após ter movido R1 de forma
+indireta para ele?**
+O valor FFh apareceu no acumulador.
+
+**(e) - Por que foi possível mover um valor de 4 dígitos para DPTR? Em
+quais registradores especiais do simulador foi possível verificar
+mudanças quando essa operação foi realizada? Qual o maior valor que
+pode ser movido para DPTR em hexadecimal?**
+Isso foi possível porque o DPTR é um registrador de 16 bits, sendo que os 8 bits mais significativos estão no registrados DPH e os 8 bits menos significativos estão em DPL. Foi possível verificar mudanças nos registradores DPH e DPL com essa operação. O valor máximo que pode ser movido é 0FFFFh.
+
 ### Atividade 2
 ```
 org 00h
@@ -274,6 +310,9 @@ inicio:
 
 end           ;Fim do programa - duracao total: 26us
 ```
+RESPOSTA 1: Isso acontece porque o bit menos significativo de PSW é o bit de paridade do acumulador, sendo que ele assumirá o valor de 1 caso a quantidade de bits do acumulador for ímapar e 0 caso for par.
+
+RESPOSTA 2: A operação resulta em FFh porque na subtração de um número maior (1) de um menor (0), ocorrerá um "empréstimo" da próxima casa. No caso da subtração de 1 de 0, isso ocrrerá até o bit mais significativo do número, resultando no máximo valor possível (FFh).
 
 ### Atividade 3
 ```
