@@ -141,7 +141,9 @@ Ambas as instruções realizam a mesma função, no entanto, a primeira ocupa 2 
 CPU, os quais são: Instruction Register (IR), Program Counter (PC), Accumulator (ACC) e
 Data Pointer (DPTR). Baseado na Figura abaixo, responda às questões com verdadeiro (V) ou
 Falso (F):**
+
 ![image](https://github.com/BrunoCiotta/Aplica-es-de-micros/assets/85022924/422fc18f-b906-4638-a52f-1f7e91619698)
+
 **( ) Trata-se de um microcontrolador de arquitetura Harvard.**
 
 **( ) A memória EEPROM é de 4Kbytes e armazena as instruções que comandam o
