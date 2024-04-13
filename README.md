@@ -66,7 +66,7 @@ Já o perfil ideal desse microcontrolador envolveria: baixa capacidade de proces
 **( ) Cada palavra (A, B, C... P1, P2, P3…) pode ser configurada como entrada, saída ou
 bidirecional.**
 
-(V) Cada bit pode ser configurado como entrada, saída ou bidirecional.
+**(V) Cada bit pode ser configurado como entrada, saída ou bidirecional.**
 
 ### Questão 5
 **Assinale V para verdadeiro e F para falso nas afirmações abaixo:**
@@ -123,6 +123,9 @@ MOV 00h, #22h
 **Qual a diferença entre as duas instruções acima? Tente refletir porque possuem ciclos de
 máquina diferentes se a operação é realizada na mesma posição de memória RAM (00h ou
 R0 usa o mesmo espaço).**
+
+A primeira instrução levou um ciclo de máquina para ser executada, enquanto que a segunda instrução levou dois ciclos. Essa diferença se dá porque uma das instruções é realizada com um registrador interno e a outra é realizada com um endereço de RAM externa, sendo que a operação para acesso da memória externa é mais demorada e requer mais ciclos de máquina do que uma simples movimentação na memória interna.
+
 ```
 MOV A, #22h
 MOV ACC, #22h
@@ -130,6 +133,8 @@ MOV ACC, #22h
 **Qual a diferença entre as duas instruções acima? Tente refletir sobre a diferença de usar A ou
 ACC e sobre porque possuem ciclos de máquina diferentes se a operação realizada é a
 mesma.**
+
+Ambas as instruções realizam a mesma função, no entanto, a primeira ocupa 2 bytes e utiliza 1 ciclo de máquina, já a segunda ocupa 3 bytes e utiliza 3 ciclos. Essa diferença se dá porque a primeira instrução acessa o acumulador diretamente utilizando A, enquanto que a segunda utiliza o endereço do acumulador ACC, utilizar o endereço implica um tempo maior de processamento.
 
 ### Questão 9
 **A Figura abaixo mostra um microcontrolador genérico de 8 bits com 4 registradores internos à
@@ -158,6 +163,8 @@ microcontrolador.**
 
 **( ) Para esse microcontrolador, o registrador DPTR deve ser de 10 bits.**
 
+V-V-F-F-V-V-F-V-F-F
+
 ### Questão 10
 **Responder com Verdadeiro (V) ou Falso (F) às seguintes afirmações.**
 
@@ -183,9 +190,13 @@ possui tamanho 8 bits, mesmo tamanho do barramento de endereço da CPU.**
 
 **( ) Geralmente são baseadas em flip-flops tipo D.**
 
+F-V-F-V-V-F-V
+
 ### Questão 11
 **Refletir se existe diferença entre o endereço armazenado em um espaço de pilha e o endereço
 armazenado no Stack Pointer (SP)?**
+
+Existe diferença, pois o endereço armazenado em um espaço de pilha é o endereço da instrução a ser realizada após o retorno de uma subrotina ou de uma interrupção, enquanto que o Stack Pointer é um ponteiro que aponta para o primeiro endereço do espaço de pilha. Desse modo, apesar de armazenar um endereço, o espaço de pilha não é um ponteiro como o SP, que irá apontar para um endereço cujo conteúdo será lido, ele apenas armazenará esse endereço.
 
 ### Questão 12
 **Colocou-se 3 LEDs nos endereços P1.0, P1.1 e P1.2 no microcontrolador e 3 chaves nos
@@ -201,7 +212,7 @@ Leitura:
 	LCALL Leitura
 PX:
 	MOV P1, #0
-RET
+	RET
 PY:
 	MOV P1, #00000101b
 	RET
